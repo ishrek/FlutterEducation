@@ -10,7 +10,7 @@ import 'MyAppBar.dart';
 
 
 //https://flutter.dev/docs/get-started/codelab
-void main() => runApp(MyAppNavigators());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override

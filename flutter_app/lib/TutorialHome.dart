@@ -4,6 +4,9 @@ import 'dart:developer' as developer;
 import 'dart:async';
 
 import 'package:flutter_app/newScreen/SecondVC.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'Bloc/CounterBloc.dart';
 
 class TutorialHome extends StatefulWidget {
   TutorialHome({Key key}) : super(key: key);
@@ -148,12 +151,15 @@ class MyButton extends StatelessWidget {
         //     }
         // ));
 
-
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => SecondVC()),
+          MaterialPageRoute(
+            builder: (context) => BlocProvider<CounterBloc>(
+              create: (context) => CounterBloc(),
+              child: SecondVC(),
+            ),
+          ),
         );
-
       },
       // The custom button
       child: Container(
@@ -163,7 +169,7 @@ class MyButton extends StatelessWidget {
           color: Colors.lightGreen[500],
         ),
         child: Text(
-          'Push',
+          'Push to bloc',
           style: TextStyle(fontSize: 24),
         ),
       ),
