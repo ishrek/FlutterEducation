@@ -68,6 +68,7 @@ class MyApp extends StatelessWidget {
     // Return home page
     return MaterialApp(
       title: "Home center",
+      debugShowCheckedModeBanner: false,
       home: TutorialHome(),
     );
   }

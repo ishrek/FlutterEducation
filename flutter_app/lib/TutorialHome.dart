@@ -4,6 +4,7 @@ import 'dart:developer' as developer;
 import 'dart:async';
 
 import 'package:flutter_app/newScreen/SecondVC.dart';
+import 'package:flutter_app/providers/DemoProviderView.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'Bloc/CounterBloc.dart';
@@ -69,7 +70,12 @@ class _TutorialHometState extends State<TutorialHome> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               decoration: BoxDecoration(color: Colors.blue[900]),
-              child: (MyButton()),
+              child: (PushToSecondView()),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              decoration: BoxDecoration(color: Colors.blue[900]),
+              child: (PushToProvider()),
             ),
             Column(
               mainAxisSize: MainAxisSize.min,
@@ -124,7 +130,7 @@ class _TutorialHometState extends State<TutorialHome> {
   }
 }
 
-class MyButton extends StatelessWidget {
+class PushToSecondView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // The GestureDetector wraps the button.
@@ -170,7 +176,38 @@ class MyButton extends StatelessWidget {
         ),
         child: Text(
           'Push to bloc',
-          style: TextStyle(fontSize: 24),
+          style: TextStyle(fontSize: 16),
+        ),
+      ),
+    );
+  }
+}
+
+//Demo provider
+class PushToProvider extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // The GestureDetector wraps the button.
+    return GestureDetector(
+      // When the child is tapped, show a snackbar.
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => new DemoProviderView(),
+          ),
+        );
+      },
+      // The custom button
+      child: Container(
+        padding: EdgeInsets.all(12.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5.0),
+          color: Colors.greenAccent[500],
+        ),
+        child: Text(
+          'Provider',
+          style: TextStyle(fontSize: 16),
         ),
       ),
     );
