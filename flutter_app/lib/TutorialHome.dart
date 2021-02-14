@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_app/Redux/ReduxView.dart';
 import 'dart:developer' as developer;
 import 'dart:async';
 
@@ -76,6 +77,11 @@ class _TutorialHometState extends State<TutorialHome> {
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               decoration: BoxDecoration(color: Colors.blue[900]),
               child: (PushToProvider()),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              decoration: BoxDecoration(color: Colors.blue[900]),
+              child: (PushToRedux()),
             ),
             Column(
               mainAxisSize: MainAxisSize.min,
@@ -204,6 +210,38 @@ class PushToProvider extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5.0),
           color: Colors.greenAccent[500],
+        ),
+        child: Text(
+          'Provider',
+          style: TextStyle(fontSize: 16),
+        ),
+      ),
+    );
+  }
+}
+
+
+//Demo Redux
+class PushToRedux extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // The GestureDetector wraps the button.
+    return GestureDetector(
+      // When the child is tapped, show a snackbar.
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ReduxView(),
+          ),
+        );
+      },
+      // The custom button
+      child: Container(
+        padding: EdgeInsets.all(12.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5.0),
+          color: Colors.red,
         ),
         child: Text(
           'Provider',
