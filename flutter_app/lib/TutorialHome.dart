@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_app/FluterProvider/DemoFutureProviderWithStreamProvider.dart';
 import 'package:flutter_app/Redux/ReduxView.dart';
 import 'dart:developer' as developer;
 import 'dart:async';
@@ -82,6 +83,11 @@ class _TutorialHometState extends State<TutorialHome> {
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               decoration: BoxDecoration(color: Colors.blue[900]),
               child: (PushToRedux()),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              decoration: BoxDecoration(color: Colors.blue[900]),
+              child: (PushToFluterProvider()),
             ),
             Column(
               mainAxisSize: MainAxisSize.min,
@@ -220,7 +226,6 @@ class PushToProvider extends StatelessWidget {
   }
 }
 
-
 //Demo Redux
 class PushToRedux extends StatelessWidget {
   @override
@@ -244,7 +249,38 @@ class PushToRedux extends StatelessWidget {
           color: Colors.red,
         ),
         child: Text(
-          'Provider',
+          'Redux',
+          style: TextStyle(fontSize: 16),
+        ),
+      ),
+    );
+  }
+}
+
+//Demo FluterProvider
+class PushToFluterProvider extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // The GestureDetector wraps the button.
+    return GestureDetector(
+      // When the child is tapped, show a snackbar.
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DemoFutureProviderWithStreamProvider(),
+          ),
+        );
+      },
+      // The custom button
+      child: Container(
+        padding: EdgeInsets.all(12.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5.0),
+          color: Colors.red,
+        ),
+        child: Text(
+          'FluterProvider',
           style: TextStyle(fontSize: 16),
         ),
       ),
