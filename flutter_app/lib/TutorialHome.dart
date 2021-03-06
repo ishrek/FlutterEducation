@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_app/Bloc/DataState.dart';
 import 'package:flutter_app/FluterProvider/DemoFutureProviderWithStreamProvider.dart';
+import 'package:flutter_app/HomeComponent/DemoBloCArchitecture.dart';
 import 'package:flutter_app/Redux/ReduxView.dart';
 import 'dart:developer' as developer;
 import 'dart:async';
@@ -89,6 +90,11 @@ class _TutorialHometState extends State<TutorialHome> {
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               decoration: BoxDecoration(color: Colors.blue[900]),
               child: (PushToFluterProvider()),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              decoration: BoxDecoration(color: Colors.blue[900]),
+              child: (PushToBLoCArchitecture()),
             ),
             Column(
               mainAxisSize: MainAxisSize.min,

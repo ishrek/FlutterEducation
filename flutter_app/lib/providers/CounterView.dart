@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import 'CounterModel.dart';
 
+// https://baoflutter.com/provider-trong-flutter-quan-ly-state-trong-ung-dung/
 class CounterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
