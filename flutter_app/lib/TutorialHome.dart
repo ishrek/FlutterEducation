@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_app/Bloc/DataState.dart';
 import 'package:flutter_app/FluterProvider/DemoFutureProviderWithStreamProvider.dart';
 import 'package:flutter_app/Redux/ReduxView.dart';
 import 'dart:developer' as developer;
@@ -173,7 +174,7 @@ class PushToSecondView extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => BlocProvider<CounterBloc>(
-              create: (context) => CounterBloc(),
+              create: (context) => CounterBloc(Success(0)),
               child: SecondVC(),
             ),
           ),

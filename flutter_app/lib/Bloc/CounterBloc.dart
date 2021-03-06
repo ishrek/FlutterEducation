@@ -6,9 +6,7 @@ import 'DataState.dart';
 class CounterBloc extends Bloc<DataEvent, DataState> {
   int count = 0;
 
-  @override
-  // TODO: implement initialState
-  DataState get initialState => Success(count);
+  CounterBloc(DataState initialState) : super(initialState);
 
   @override
   Stream<DataState> mapEventToState(DataEvent event) async* {
