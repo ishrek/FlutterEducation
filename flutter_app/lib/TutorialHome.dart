@@ -3,15 +3,16 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_app/Bloc/DataState.dart';
 import 'package:flutter_app/FluterProvider/DemoFutureProviderWithStreamProvider.dart';
 import 'package:flutter_app/HomeComponent/DemoBloCArchitecture.dart';
+import 'package:flutter_app/HomeComponent/DemoGetX.dart';
 import 'package:flutter_app/Redux/ReduxView.dart';
 import 'dart:developer' as developer;
-import 'dart:async';
 
 import 'package:flutter_app/newScreen/SecondVC.dart';
 import 'package:flutter_app/providers/DemoProviderView.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'Bloc/CounterBloc.dart';
+import 'HomeComponent/DemoGetX2.dart';
 
 class TutorialHome extends StatefulWidget {
   TutorialHome({Key key}) : super(key: key);
@@ -95,6 +96,16 @@ class _TutorialHometState extends State<TutorialHome> {
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               decoration: BoxDecoration(color: Colors.blue[900]),
               child: (PushToBLoCArchitecture()),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              decoration: BoxDecoration(color: Colors.blue[900]),
+              child: (PushToGetX()),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              decoration: BoxDecoration(color: Colors.blue[900]),
+              child: (PushToGetX2()),
             ),
             Column(
               mainAxisSize: MainAxisSize.min,

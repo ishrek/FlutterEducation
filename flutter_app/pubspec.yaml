@@ -35,6 +35,9 @@ dependencies:
   meta: ^1.1.6
   provider: ^4.3.3
   flutter_redux: 0.7.0
+  get: ^3.4.6
+  http: ^0.13.0
+  google_fonts: ^2.0.0
 
 dev_dependencies:
   flutter_test:

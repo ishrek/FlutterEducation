@@ -10,7 +10,10 @@ import 'MyAppBar.dart';
 
 
 //https://flutter.dev/docs/get-started/codelab
-void main() => runApp(MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
