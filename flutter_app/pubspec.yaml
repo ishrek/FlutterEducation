@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+
   flutter:
     sdk: flutter
 
@@ -35,7 +36,9 @@ dependencies:
   meta: ^1.1.6
   provider: ^4.3.3
   flutter_redux: 0.7.0
-  get: ^3.4.6
+  get:
+  get_storage:
+  responsive_widgets: ^2.0.1
   http: ^0.13.0
   google_fonts: ^2.0.0
 
@@ -56,6 +59,21 @@ flutter:
 
   assets:
     - info.json
+    - assets/images/github.png
+    - assets/images/microsoft.png
+    - assets/images/dart.png
+    - assets/images/telegram.png
+    - assets/images/rocket_minimal.png
+    - assets/images/rocket_minimal_new.png
+    - assets/images/en-flag.png
+    - assets/images/es-flag.jpg
+    - assets/images/br-flag.jpg
+    - assets/images/strc_module.png
+    - assets/images/strc.png
+    - assets/images/benchmark.png
+    - assets/images/main_count.png
+    - assets/images/controller_counter.png
+    - assets/images/page_counter.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -6,12 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/RandomWords.dart';
 import 'package:flutter_app/TutorialHome.dart';
 import 'package:flutter_app/nestingNavigators/MyAppNavigators.dart';
+import 'package:get_storage/get_storage.dart';
 import 'MyAppBar.dart';
 
 
 //https://flutter.dev/docs/get-started/codelab
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init();
   runApp(MyApp());
 }
 

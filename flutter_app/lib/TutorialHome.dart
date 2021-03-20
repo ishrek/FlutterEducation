@@ -4,6 +4,7 @@ import 'package:flutter_app/Bloc/DataState.dart';
 import 'package:flutter_app/FluterProvider/DemoFutureProviderWithStreamProvider.dart';
 import 'package:flutter_app/HomeComponent/DemoBloCArchitecture.dart';
 import 'package:flutter_app/HomeComponent/DemoGetX.dart';
+import 'package:flutter_app/HomeComponent/PushToGetx3.dart';
 import 'package:flutter_app/Redux/ReduxView.dart';
 import 'dart:developer' as developer;
 
@@ -106,6 +107,11 @@ class _TutorialHometState extends State<TutorialHome> {
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               decoration: BoxDecoration(color: Colors.blue[900]),
               child: (PushToGetX2()),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              decoration: BoxDecoration(color: Colors.blue[900]),
+              child: (PushToGetX3()),
             ),
             Column(
               mainAxisSize: MainAxisSize.min,
