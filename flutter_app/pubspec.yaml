@@ -39,8 +39,8 @@ dependencies:
   get:
   get_storage:
   responsive_widgets: ^2.0.1
-  http: ^0.13.0
-  google_fonts: ^2.0.0
+  http: 0.12.2
+  google_fonts:
 
 dev_dependencies:
   flutter_test:
