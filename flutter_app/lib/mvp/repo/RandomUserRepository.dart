@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'dart:core';
-
+import 'dart:developer' as developer;
 import 'package:flutter_app/mvp/model/Contact.dart';
 import 'package:flutter_app/mvp/networks/FetchDataException.dart';
 
@@ -24,7 +24,7 @@ class RandomUserRepository implements ContactRepository {
 
     final contactsContainer = _decoder.convert(jsonBody);
     final List contactItems = contactsContainer['results'];
-
+    developer.log('fetch data', name: 'RandomUserRepository');
     return contactItems.map( (contactRaw) => Contact.fromMap(contactRaw) )
         .toList();
   }

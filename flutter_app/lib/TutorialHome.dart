@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_app/Bloc/DataState.dart';
 import 'package:flutter_app/FluterProvider/DemoFutureProviderWithStreamProvider.dart';
 import 'package:flutter_app/HomeComponent/DemoBloCArchitecture.dart';
+import 'package:flutter_app/HomeComponent/DemoCovid19.dart';
 import 'package:flutter_app/HomeComponent/DemoGetX.dart';
 import 'package:flutter_app/HomeComponent/DemoMVP.dart';
 import 'package:flutter_app/HomeComponent/PushToGetx3.dart';
@@ -11,6 +12,7 @@ import 'dart:developer' as developer;
 
 import 'package:flutter_app/newScreen/SecondVC.dart';
 import 'package:flutter_app/providers/DemoProviderView.dart';
+import 'package:flutter_app/utils/AppUtils.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'Bloc/CounterBloc.dart';
@@ -28,6 +30,8 @@ class _TutorialHometState extends State<TutorialHome> {
   int _count = 0;
 
   void _increment() {
+    //demo enum
+    var car = CarType.sedan;
     setState(() {
       _count++;
     });
@@ -118,6 +122,11 @@ class _TutorialHometState extends State<TutorialHome> {
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               decoration: BoxDecoration(color: Colors.blue[900]),
               child: (DemoMVP()),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              decoration: BoxDecoration(color: Colors.blue[900]),
+              child: (DemoCovi19()),
             ),
             Column(
               mainAxisSize: MainAxisSize.min,
