@@ -4,6 +4,7 @@ import 'package:flutter_app/Bloc/DataState.dart';
 import 'package:flutter_app/FluterProvider/DemoFutureProviderWithStreamProvider.dart';
 import 'package:flutter_app/HomeComponent/DemoBloCArchitecture.dart';
 import 'package:flutter_app/HomeComponent/DemoCovid19.dart';
+import 'package:flutter_app/HomeComponent/DemoDrawer/FirstVC.dart';
 import 'package:flutter_app/HomeComponent/DemoGetX.dart';
 import 'package:flutter_app/HomeComponent/DemoMVP.dart';
 import 'package:flutter_app/HomeComponent/PushToGetx3.dart';
@@ -16,6 +17,7 @@ import 'package:flutter_app/utils/AppUtils.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'Bloc/CounterBloc.dart';
+import 'HomeComponent/DemoDrawer/SecondView.dart';
 import 'HomeComponent/DemoGetX2.dart';
 
 class TutorialHome extends StatefulWidget {
@@ -49,11 +51,6 @@ class _TutorialHometState extends State<TutorialHome> {
     // Scaffold is a layout for the major Material Components.
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          tooltip: 'Navigation menu',
-          onPressed: null,
-        ),
         title: Text('Example title'),
         actions: <Widget>[
           IconButton(
@@ -164,6 +161,40 @@ class _TutorialHometState extends State<TutorialHome> {
             )
           ],
         ),
+      ),
+      drawer: Drawer(
+        // Add a ListView to the drawer. This ensures the user can scroll
+        // through the options in the drawer if there isn't enough vertical
+        // space to fit everything.
+          child: new ListView(
+            children: <Widget>[
+              new DrawerHeader(
+                child: new Text("DRAWER HEADER.."),
+                decoration: new BoxDecoration(
+                    color: Colors.orange
+                ),
+              ),
+              new ListTile(
+                title: Text("Item One"),
+                trailing: Icon(Icons.arrow_forward),
+              ),
+              new ListTile(
+                leading: Icon(Icons.favorite),
+                title: new Text("Item => 1"),
+                onTap: () {
+                  Navigator.push(context,
+                      new MaterialPageRoute(builder: (context) => new FirstVC()));
+                },
+              ),
+              new ListTile(
+                title: new Text("Item => 2"),
+                onTap: () {
+                  Navigator.push(context,
+                      new MaterialPageRoute(builder: (context) => new SecondView()));
+                },
+              ),
+            ],
+          ),
       ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
@@ -326,3 +357,4 @@ class PushToFluterProvider extends StatelessWidget {
     );
   }
 }
+
